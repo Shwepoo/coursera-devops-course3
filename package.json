@@ -12,5 +12,12 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1"
+  },
+  "scripts": {
+    "build": "npx parcel build src/index.html --public-url /coursera-devops-course3",
+    "lint": "npx eslint .",
+    "test": "npx jest",
+    "deploy": "npx run build && npx gh-pages -d dist",
+    "ci": "npx run lint && npx run test && npx run deploy"
   }
 }
